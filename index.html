@@ -3,23 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WikiScroll</title>
+    <title>WikiScroll - Infinite Wiki Feed</title>
     <style>
       body {
         background-color: #15202b;
         color: white;
-        font-family: sans-serif;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
         display: flex;
         justify-content: center;
         margin: 0;
+        padding: 0;
       }
+
       #feed {
         width: 100%;
         max-width: 600px;
         border-left: 1px solid #38444d;
         border-right: 1px solid #38444d;
         min-height: 100vh;
+        position: relative;
+        z-index: 1;
       }
+
       .card {
         padding: 15px;
         border-bottom: 1px solid #38444d;
@@ -28,37 +35,54 @@
         gap: 10px;
         cursor: pointer;
         transition: background 0.2s;
+        pointer-events: auto;
       }
+
       .card:hover {
         background-color: #192734;
       }
+
       .title {
         font-size: 1.2rem;
         font-weight: bold;
         color: #1da1f2;
       }
+
       .text {
         color: #8899a6;
         line-height: 1.4;
+        font-size: 0.95rem;
       }
+
       .card img {
         width: 100%;
         border-radius: 15px;
-        max-height: 300px;
+        max-height: 320px;
         object-fit: cover;
         margin-top: 5px;
       }
+
       .actions {
         display: flex;
         gap: 20px;
         color: #8899a6;
+        font-size: 0.9rem;
+        margin-top: 5px;
       }
+
       .like-btn {
         cursor: pointer;
+        user-select: none;
         transition: color 0.2s;
       }
+
+      .like-btn:hover {
+        color: #e0245e;
+      }
+
       .like-btn.liked {
         color: #e0245e;
+        font-weight: bold;
       }
     </style>
   </head>

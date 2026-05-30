@@ -208,13 +208,13 @@ async function renderNextPost() {
 function setupIntersectionObserver() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            // If a card left the user view going upward without engagement, deduct -5 points
+            // If a card left the user view going upward without engagement, deduct points
             if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
                 observer.unobserve(entry.target);
                 renderNextPost();
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.0 }); // Use 0.0 value for precise intersection calculation on remote pages
 
     // Periodically sweep DOM to register dynamic card objects into active intersection tracking
     setInterval(() => {
