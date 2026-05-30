@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WikiScroll</title>
+    <style>
+      body {
+        background-color: #15202b;
+        color: white;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+      }
+      #feed {
+        width: 100%;
+        max-width: 600px;
+        border-left: 1px solid #38444d;
+        border-right: 1px solid #38444d;
+        min-height: 100vh;
+      }
+      .card {
+        padding: 15px;
+        border-bottom: 1px solid #38444d;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .card:hover {
+        background-color: #192734;
+      }
+      .title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #1da1f2;
+      }
+      .text {
+        color: #8899a6;
+        line-height: 1.4;
+      }
+      .card img {
+        width: 100%;
+        border-radius: 15px;
+        max-height: 300px;
+        object-fit: cover;
+        margin-top: 5px;
+      }
+      .actions {
+        display: flex;
+        gap: 20px;
+        color: #8899a6;
+      }
+      .like-btn {
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      .like-btn.liked {
+        color: #e0245e;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="feed"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
